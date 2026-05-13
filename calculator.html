@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор жима лёжа</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-title">Планировщик тренировок</div>
+        <nav class="nav">
+            <a href="index.html">Главная</a>
+            <a href="history.html">История</a>
+            <a href="calculator.html">Калькулятор</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Калькулятор жима лёжа</h2>
+        <p>Рассчитайте свой разовый максимум по 7 формулам.</p>
+
+        <form id="calcForm">
+            <div class="form-group">
+                <label>Вес штанги (кг)</label>
+                <input type="number" id="calcWeight" placeholder="80" min="1" required>
+            </div>
+            <div class="form-group">
+                <label>Количество повторений</label>
+                <input type="number" id="calcReps" placeholder="8" min="1" required>
+            </div>
+            <button type="submit" class="btn btn-blue">Рассчитать</button>
+        </form>
+
+        <div id="calcResult"></div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>История тренировок</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-title">Планировщик тренировок</div>
+        <nav class="nav">
+            <a href="index.html">Главная</a>
+            <a href="history.html">История</a>
+            <a href="calculator.html">Калькулятор</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>История тренировок</h2>
+        <button class="btn btn-red" onclick="clearHistory()" style="margin-bottom:15px;">Очистить историю</button>
+        <div id="historyList"></div>
+        <p id="emptyHistory" style="display:none;">История пока пуста.</p>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
