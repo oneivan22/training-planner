@@ -1,0 +1,14 @@
+.history-day { margin-bottom: 20px; }
+
+.history-day h3 {
+    background: #f0f0f0;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.history-item {
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}

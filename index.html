@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Планировщик тренировок</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
@@ -14,6 +14,7 @@
             <a href="index.html">Главная</a>
             <a href="history.html">История</a>
             <a href="calculator.html">Калькулятор</a>
+            <a href="ai-chat.html">AI-тренер</a>
         </nav>
     </header>
 
@@ -47,6 +48,16 @@
         </div>
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/plan.js"></script>
+    <script src="js/modal.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var inp = document.getElementById('exSets');
+            if (inp) inp.oninput = makeRepsInputs;
+            setupAddForm();
+            showPlan();
+        });
+    </script>
 </body>
 </html>

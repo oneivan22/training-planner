@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-тренер</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-title">Планировщик тренировок</div>
+        <nav class="nav">
+            <a href="index.html">Главная</a>
+            <a href="history.html">История</a>
+            <a href="calculator.html">Калькулятор</a>
+            <a href="ai-chat.html">AI-тренер</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>AI-тренер</h2>
+        <p>Задайте вопрос о тренировках, технике упражнений или попросите составить программу.</p>
+
+        <div class="chat-box" id="chatBox">
+            <div class="chat-message bot">
+                Привет! Я твой AI-тренер. Спроси меня о тренировках, упражнениях или питании.
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Напишите вопрос...">
+            <button class="btn btn-blue" onclick="sendMessage()">Отправить</button>
+        </div>
+    </main>
+
+    <script src="js/chat.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setupChat();
+        });
+    </script>
+</body>
+</html>
