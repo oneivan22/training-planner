@@ -76,8 +76,3 @@ training-planner/
 3) Хранение данных в localStorage браузера
 4) Чат с нейросетью — интерфейс, в котором пользователь задаёт вопрос и получает ответ от AI
 5) Адаптивная вёрстка для мобильных устройств
-
-## Для работы AI-тренера
-
-В файле js/chat.js вставить токен от HuggingFace (https://huggingface.co/settings/tokens) в var HF_TOKEN = 'ВСТАВЬ_ТОКЕН_СЮДА';
-нужно вставить это токен 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
