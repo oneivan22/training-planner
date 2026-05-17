@@ -1,5 +1,5 @@
 // Токен HuggingFace для доступа к AI
-var HF_TOKEN = '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';
+var HF_TOKEN = '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';
 
 // Добавить сообщение в чат
 function addMessage(text, type) {
