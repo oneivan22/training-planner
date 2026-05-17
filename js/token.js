@@ -1,1 +1,1 @@
-var HF_TOKEN = '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';
+var HF_TOKEN = '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';
