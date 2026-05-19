@@ -6,7 +6,6 @@ function addMessage(text, type) {
     var div = document.createElement('div');
     div.className = 'chat-message ' + type;
 
-    // Форматирование: **жирный** и переносы строк
     text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     text = text.replace(/\n/g, '<br>');
 
@@ -26,19 +25,19 @@ function sendMessage() {
     input.value = '';
     addMessage('Думаю...', 'bot');
 
-    // Запрос к HuggingFace API
-    fetch('https://router.huggingface.co/v1/chat/completions', {
+    // Запрос к Mistral API
+    fetch('https://api.mistral.ai/v1/chat/completions', {
         method: 'POST',
         headers: {
             'Authorization': 'Bearer ' + HF_TOKEN,
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            model: 'moonshotai/Kimi-K2-Instruct-0905',
+            model: 'mistral-small-latest',
             messages: [
                 {
                     role: 'system',
-                    content: 'Ты — персональный тренер по фитнесу. Отвечай кратко, по делу, не более 8 предложений. Всегда на русском языке.'
+                    content: 'Ты — персональный тренер по фитнесу. Отвечай кратко, по делу. Всегда на русском языке.'
                 },
                 { role: 'user', content: text }
             ],
@@ -47,13 +46,13 @@ function sendMessage() {
     })
     .then(function(res) { return res.json(); })
     .then(function(data) {
-        // Убираем "Думаю..."
-        var box = document.getElementById('chatBox');
-        var last = box.lastChild;
-        if (last && last.textContent === 'Думаю...') box.removeChild(last);
+    var box = document.getElementById('chatBox');
+    var last = box.lastChild;
+    if (last && last.textContent === 'Думаю...') box.removeChild(last);
 
-        // Показываем ответ
-        if (data.choices && data.choices[0]) {
+    console.log(data);
+
+    if (data.choices && data.choices[0]) {
             addMessage(data.choices[0].message.content, 'bot');
         } else if (data.error) {
             addMessage('Ошибка: ' + data.error.message, 'bot');
